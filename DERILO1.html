@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Rep Derilo Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+
+        /* Carousel Container */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            background: #fff;
+        }
+
+        /* Custom Scrollbar */
+        .carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 12px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb {
+            background: #282323;
+            border-radius: 12px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb:hover {
+            background: #282323;
+        }
+
+        /* Carousel Items */
+        .carousel-item {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            flex-shrink: 0;
+            width: 100%;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Image styling */
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Text overlay on images */
+        .carousel-item-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .carousel-item-text h2 {
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+
+        .carousel-item-text p {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        /* Navigation Dots */
+        .navigation-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 2px solid white;
+        }
+
+        .dot:hover {
+            background: white;
+            transform: scale(1.15);
+        }
+
+        .dot:target {
+            background: white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .carousel-item {
+                height: 280px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Anime Recommended</h1>
+
+        <div class="carousel">
+            <div class="carousel-item" id="slide1">
+                <img src="C:\Users\comlab1\Downloads\Sakamotodays.jpeg" alt="Slide 1">
+                <div class="carousel-item-text">
+                    <h2>Sakamoto Days</h2>
+                
+                </div>
+            </div>
+
+            <div class="carousel-item" id="slide2">
+                <img src="C:\Users\comlab1\Downloads\aots4.jpeg" alt="Slide 2">
+                <div class="carousel-item-text">
+                    <h2>Attack on Titan</h2>
+                    
+                </div>
+            </div>
+
+            <div class="carousel-item" id="slide3">
+                <img src="C:\Users\comlab1\Downloads\haikyu.jpeg" alt="Slide 3">
+                <div class="carousel-item-text">
+                    <h2>Haikyu!</h2>
+                   
+                </div>
+            </div>
+
+            <div class="carousel-item" id="slide4">
+                <img src="C:\Users\comlab1\Downloads\bluelock.jpeg" alt="Slide 4">
+                <div class="carousel-item-text">
+                    <h2>Blue Lock</h2>
+                    
+                </div>
+            </div>
+
+            <div class="carousel-item" id="slide5">
+                <img src="C:\Users\comlab1\Downloads\dskny.jpeg" alt="Slide 5">
+                <div class="carousel-item-text">
+                    <h2>Kimetsu no Yaiba: Demon Slayer</h2>
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="navigation-dots">
+            <a href="#slide1" class="dot"></a>
+            <a href="#slide2" class="dot"></a>
+            <a href="#slide3" class="dot"></a>
+            <a href="#slide4" class="dot"></a>
+            <a href="#slide5" class="dot"></a>
+        </div>
+    </div>
+</body>
+</html>
